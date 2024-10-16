@@ -11,17 +11,61 @@
     {% block titulo %}
     <title>modelo</title>
     {% endblock %}
-    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
 </head>
 <body>
     {% block menu %}
     <div class="bg-light">
-        Código do menu
+        <nav class="navbar navbar-expand-sm navbar-light bg-success">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="{% static 'img/logo redonda.png' %}" width="50"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
+                    aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarID">
+                    <div class="navbar-nav">
+                        <a class="nav-link active d-flex align-items-center" aria-current="page" href="{% url 'inicio' %}">
+                            <img src="{% static 'img/casa.png' %}" width="15" class="me-2"> 
+                            <span>Início</span>
+                        </a>
+                        <a class="nav-link active d-flex align-items-center" aria-current="page" href="#">
+                            <img src="{% static 'img/adição.png' %}" width="15" class="me-2"> 
+                            <span>Cadastros</span>
+                        </a>
+                        <a class="nav-link active d-flex align-items-center" aria-current="page" href="{% url 'sobre' %}">
+                            <img src="{% static 'img/i.png' %}" width="15" class="me-2"> 
+                            <span>Sobre</span>
+                        </a>
+                        <a class="nav-link active d-flex align-items-center" aria-current="page" href="#">
+                            <img src="{% static 'img/interrogas.png' %}" width="15" class="me-2">
+                            <span>Ajuda</span>
+                        </a>
+                    </div>
+
+                  
+                    <a class="nav-link active d-flex align-items-center ml-auto" aria-current="page" href="#" style="margin-right: 300px; color: black;">
+                        <img src="{% static 'img/user.png' %}" width="15" class="me-2">
+                        <span>Usuário</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
     </div>
-    {% endblock %}
+{% endblock %}
+
+
+
 
     {% block destaque %}
-    <div class="bg-success">
+    <div class="bg-danger">
         destaque
     </div>
     {% endblock %}
@@ -34,9 +78,32 @@
     {% endblock %}
 
     {% block rodapé %}
-    <div class="bg-dark">
-        rodapé
-    </div>
+    <footer>
+        <div class="footer-section">
+          <h3>O Município</h3>
+          <ul>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Serviços</h3>
+          <ul>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Acesso rápido</h3>
+          <ul>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+          </ul>
+        </div>
+      </footer>
     {% endblock %}
     
 </body>
