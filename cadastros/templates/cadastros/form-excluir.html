@@ -1,0 +1,34 @@
+{% extends 'paginas/modelo.html' %}
+
+{% block titulo %}
+<title>cadastros</title>
+{% endblock %}
+
+{% block destaque %}
+
+{% endblock %}
+
+{% block conteúdo %}
+<div class="container">
+    <h1>Excluir registros</h1>
+    <p class="lead">Confirme para excluir o registro</p>
+    
+
+
+
+<hr>
+
+<form action="" method="POST">
+
+    <p>Deseja excluir o registro: <strong>{{ object }}</strong>
+
+    </p>
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    
+</form>
+</div>
+{% endblock %}

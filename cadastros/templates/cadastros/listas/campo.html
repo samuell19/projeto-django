@@ -1,0 +1,39 @@
+{% extends 'paginas/modelo.html' %}
+
+{% block titulo %}
+<title>cadastros</title>
+{% endblock %}
+
+{% block destaque %}
+
+{% endblock %}
+
+{% block conteúdo %}
+<div class="container">
+    <h1>Lista de campos </h1>
+    <p class="lead">Preencha os campos obrigatórios</p>
+    <hr>
+    <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover"
+        <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Opções</th>
+        </tr>
+    </table>
+
+
+
+<hr>
+</div>
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+    
+</form>
+</div>
+{% endblock %}
