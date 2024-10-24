@@ -9,7 +9,7 @@ class CampoCreate(CreateView):
     model = Campo
     fields = ['nome','descricao']
     template_name='cadastros/form.html'
-    success_url = reverse_lazy('inicio') 
+    success_url = reverse_lazy('listar-campos') 
 
 class AtividadeCreate(CreateView):
     model= Atividade
@@ -22,26 +22,26 @@ class AtividadeCreate(CreateView):
 class CampoUpdate(UpdateView):
         model = Campo
         fields = ['nome','descricao']
-        template_name='cadastros/form.html'
-        success_url = reverse_lazy('inicio')
+        template_name='cadastros/form-editar.html'
+        success_url = reverse_lazy('listar-campos')
 
 class AtividadeUpdate(UpdateView):
         model=Atividade
         fields = ['numero','descricao', 'pontos', 'detalhes', 'campo']
         template_name='cadastros/form.html'
-        success_url = reverse_lazy('inicio')
+        success_url = reverse_lazy('listar-atividades')
 
      ######delete view########
  
 class CampoDelete(DeleteView):
        model = Campo
        template_name='cadastros/form-excluir.html'
-       success_url = reverse_lazy('inicio')
+       success_url = reverse_lazy('listar-campos')
 
 class AtividadeDelete(DeleteView):
        model=Atividade
        template_name='cadastros/form-excluir.html'       
-       success_url = reverse_lazy('inicio')
+       success_url = reverse_lazy('listar-atividades')
 
 #####lista######
 

@@ -1,0 +1,60 @@
+{% extends 'paginas/modelo.html' %}
+
+{% block titulo %}
+<title>cadastros</title>
+{% endblock %}
+
+{% block destaque %}
+
+{% endblock %}
+
+{% block conteúdo %}
+<div class="container">
+    <h1>Lista de atividades </h1>
+    <p class="lead">Preencha os campos obrigatórios</p>
+    <hr>
+    <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover"
+        <tr>
+            <th>Número</th>
+            <th>Descrição</th>
+            <th>Detalhes</th>
+            <th>Pontos</th>
+            <th>Opções</th>
+        </tr>
+
+        {% for atividade in object_list %}
+        <tr>
+            <td>{{ atividade.numero }}</td>
+            <td>{{ atividade.descricao }}</td>
+            <td>{{ atividade.detalhes }}</td>
+            <td>{{ atividade.pontos }}</td>
+            <td>
+                <a href="{% url 'editar-atividade' atividade.pk %}" class="btn btn-warning btn-sm">Editar</a>
+                <a href="{% url 'excluir-atividade' atividade.pk %}" class="btn btn-danger btn-sm">Excluir</a>
+            </td>
+        </tr>
+
+        {% empty %}
+        <tr>
+            <td colspan="3">Nenhum registro encontrado.</td>
+        </tr>
+
+        {% endfor %}
+    </table>
+
+
+
+<hr>
+</div>
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <a href="{% url 'cadastrar-atividade' %}" class="btn btn-primary btn-sm">Cadastrar uma nova atividade</a>
+    
+</form>
+</div>
+{% endblock %}
