@@ -1,5 +1,9 @@
 {% extends 'paginas/modelo.html' %}
 
+{% load static %}
+
+{% load crispy_forms_tags %}
+
 {% block titulo %}
 <title>cadastros</title>
 {% endblock %}
@@ -27,7 +31,7 @@
         <tr>
             <td>{{ atividade.numero }}</td>
             <td>{{ atividade.descricao }}</td>
-            <td>{{ atividade.detalhes }}</td>
+            <td>{{ atividade.detalhes|default:"" }}</td>
             <td>{{ atividade.pontos }}</td>
             <td>
                 <a href="{% url 'editar-atividade' atividade.pk %}" class="btn btn-warning btn-sm">Editar</a>
@@ -51,7 +55,7 @@
 <form action="" method="POST">
     {% csrf_token %}
 
-    {{ form.as_p }}
+    {{ form|crispy }}
 
     <a href="{% url 'cadastrar-atividade' %}" class="btn btn-primary btn-sm">Cadastrar uma nova atividade</a>
     

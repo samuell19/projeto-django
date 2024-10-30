@@ -59,6 +59,10 @@
                         <img src="{% static 'img/user.png' %}" width="15" class="me-2">
                         <span>Usuário</span>
                     </a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'listar-atividades' %}">Editar Perfil</a>
+                        <a href="{% url 'logout' %}">Sair</a>
+                    </div>
                 </div>
             </div>
         </nav>

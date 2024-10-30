@@ -39,8 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'paginas.apps.PaginasConfig',
     'cadastros.apps.CadastrosConfig',
+    'usuarios.apps.UsuariosConfig',
+    'crispy_forms',
     #'nome do app.apps.nome do appConfig'
+    'crispy_bootstrap5',
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -129,3 +135,7 @@ STATICFILES_DIRS=[
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = 'inicio'
+LOGIN_URL='login'
+LOGOUT_REDIRECT_URL = 'login'
