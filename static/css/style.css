@@ -79,34 +79,39 @@ main {
     text-align: center;
 }
 
-/* Rodapé */
 footer {
-    background-color: #0b3d0b;
-    color: white;
+    background-color: white; /* Ajuste a cor de fundo conforme necessário */
+    padding: 20px 0;
     display: flex;
-    justify-content: space-around;
-    padding: 1rem;
-    text-align: left;
-}
-
-.footer-section {
-    flex: 1;
-}
-
-.footer-section h3 {
-    margin-top: 0;
-}
-
-.footer-section ul {
+    justify-content: center;
+  }
+  
+  .footer-section {
+    color: white;
+    margin: 0 20px;
+    text-align: center;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul {
     list-style: none;
     padding: 0;
-}
-
-.footer-section li a {
+  }
+  
+  .footer-section ul li {
+    margin: 5px 0;
+  }
+  
+  .footer-section ul li a {
     color: white;
     text-decoration: none;
-}
-
-.footer-section li a:hover {
-    text-decoration: underline;
-}
+    transition: color 0.3s;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #ddd;
+  }
