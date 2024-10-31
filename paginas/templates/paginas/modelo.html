@@ -14,7 +14,6 @@
     {% block titulo %}
     <title>modelo</title>
     {% endblock %}
-    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
 </head>
 <body>
     {% block menu %}
@@ -32,7 +31,6 @@
                             <img src="{% static 'img/casa.png' %}" width="15" class="me-2"> 
                             <span>Início</span>
                         </a>
-                        <!-- Dropdown for Cadastros -->
                         <div class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="cadastrosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img src="{% static 'img/adição.png' %}" width="15" class="me-2"> 
@@ -41,11 +39,8 @@
                             <div class="dropdown-content">
                                 <a href="{% url 'listar-campos' %}">Campos</a>
                                 <a href="{% url 'listar-atividades' %}">Atividades</a>
-                                
-                                
                             </div>
                         </div>
-                        
                         <a class="nav-link active d-flex align-items-center" aria-current="page" href="{% url 'sobre' %}">
                             <img src="{% static 'img/i.png' %}" width="15" class="me-2"> 
                             <span>Sobre</span>
@@ -59,7 +54,6 @@
                         <img src="{% static 'img/user.png' %}" width="15" class="me-2">
                         <span>Usuário</span>
                     </a>
-                   
                 </div>
             </div>
         </nav>
@@ -80,29 +74,29 @@
     {% endblock %}
 
     {% block rodapé %}
-    <footer>
-        <div class="footer-section">
-            <h3>O Município</h3>
-            <ul>
-                <li><a href="#">Link 1</a></li>
-                <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
+    <footer style="background-color: #144214; color: white; padding: 20px; display: flex; justify-content: space-around; bottom: 0; width: 100%; position: fixed;">
+        <div style="flex: 1; text-align: center;">
+            <h4 style="margin-bottom: 10px;">O Município</h4>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="#" style="color: white; text-decoration: none; font-size: 0.9em;">Link 1</a></li>
+                <li><a href="#" style="color: white; text-decoration: none; font-size: 0.9em;">Link 2</a></li>
+                <li><a href="#" style="color: white; text-decoration: none; font-size: 0.9em;">Link 3</a></li>
             </ul>
         </div>
-        <div class="footer-section">
-            <h3>Serviços</h3>
-            <ul>
-                <li><a href="#">Link 1</a></li>
-                <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
+        <div style="flex: 1; text-align: center;">
+            <h4 style="margin-bottom: 10px;">Serviços</h4>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="#" style="color: white; text-decoration: none; font-size: 0.9em;">Link 1</a></li>
+                <li><a href="#" style="color: white; text-decoration: none; font-size: 0.9em;">Link 2</a></li>
+                <li><a href="#" style="color: white; text-decoration: none; font-size: 0.9em;">Link 3</a></li>
             </ul>
         </div>
-        <div class="footer-section">
-            <h3>Acesso rápido</h3>
-            <ul>
-                <li><a href="#">Link 1</a></li>
-                <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
+        <div style="flex: 1; text-align: center;">
+            <h4 style="margin-bottom: 10px;">Acesso rápido</h4>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="#" style="color: white; text-decoration: none; font-size: 0.9em;">Link 1</a></li>
+                <li><a href="#" style="color: white; text-decoration: none; font-size: 0.9em;">Link 2</a></li>
+                <li><a href="#" style="color: white; text-decoration: none; font-size: 0.9em;">Link 3</a></li>
             </ul>
         </div>
     </footer>
