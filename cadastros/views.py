@@ -5,13 +5,17 @@ from .models import Campo, Atividade
 
 from django.urls import reverse_lazy
 
-class CampoCreate(CreateView):
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+class CampoCreate(LoginRequiredMixin, CreateView):
+    login_url = 'login' 
     model = Campo
     fields = ['nome','descricao']
     template_name='cadastros/form.html'
     success_url = reverse_lazy('listar-campos') 
 
 class AtividadeCreate(CreateView):
+    login_url = 'login' 
     model= Atividade
     fields = ['numero','descricao', 'pontos', 'detalhes', 'campo']
     template_name='cadastros/form.html'
@@ -19,13 +23,15 @@ class AtividadeCreate(CreateView):
 
     #####update view####
 
-class CampoUpdate(UpdateView):
+class CampoUpdate(LoginRequiredMixin, UpdateView):
+        login_url = 'login'      
         model = Campo
         fields = ['nome','descricao']
         template_name='cadastros/form-editar.html'
         success_url = reverse_lazy('listar-campos')
 
-class AtividadeUpdate(UpdateView):
+class AtividadeUpdate(LoginRequiredMixin, UpdateView):
+        login_url = 'login' 
         model=Atividade
         fields = ['numero','descricao', 'pontos', 'detalhes', 'campo']
         template_name='cadastros/form.html'
@@ -34,22 +40,26 @@ class AtividadeUpdate(UpdateView):
      ######delete view########
  
 class CampoDelete(DeleteView):
+       login_url = 'login' 
        model = Campo
        template_name='cadastros/form-excluir.html'
        success_url = reverse_lazy('listar-campos')
 
-class AtividadeDelete(DeleteView):
+class AtividadeDelete(LoginRequiredMixin, DeleteView):
+       login_url = 'login' 
        model=Atividade
        template_name='cadastros/form-excluir.html'       
        success_url = reverse_lazy('listar-atividades')
 
 #####lista######
 
-class CampoList(ListView):
+class CampoList(LoginRequiredMixin, ListView):
     model = Campo
-    template_name = 'cadastros/listas/campo.html'     
+    template_name = 'cadastros/listas/campo.html'  
+    login_url = 'login'   
 
-class AtividadeList(ListView):
+class AtividadeList(LoginRequiredMixin, ListView):
+      login_url = 'login' 
       model= Atividade
       template_name = 'cadastros/listas/atividade.html'      
     
