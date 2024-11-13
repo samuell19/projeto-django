@@ -13,7 +13,7 @@ class Atividade(models.Model):
     descricao= models.CharField(max_length=100, verbose_name="Descrição")
     pontos= models.DecimalField(decimal_places=1, max_digits=4)
     detalhes=models.CharField(max_length=50, null=True, blank=True)
-
+    usuarios = models.ForeignKey(User, on_delete=models.PROTECT, null=True, blank=True)
     campo= models.ForeignKey(Campo, on_delete=models.PROTECT)
 
     def __str__(self):

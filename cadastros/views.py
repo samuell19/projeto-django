@@ -19,7 +19,7 @@ class CampoCreate(GroupRequiredMixin,LoginRequiredMixin, CreateView):
 class AtividadeCreate(LoginRequiredMixin, CreateView):
     login_url = 'login' 
     model= Atividade
-    fields = ['numero','descricao', 'pontos', 'detalhes', 'campo']
+    fields = ['numero','descricao', 'pontos', 'detalhes', 'campo', 'usuarios']
     template_name='cadastros/form.html'
     success_url = reverse_lazy('inicio')
 
